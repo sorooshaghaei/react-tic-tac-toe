@@ -1,0 +1,20 @@
+.Board-row {
+  display: flex;
+  justify-content: center;
+}
+
+.Board-size {
+  padding: 40px;
+  margin: auto;
+}
+
+.status {
+  display: flex;
+  justify-content: center;
+}
+
+.square {
+  font-size: 32px;
+  width: 80px;
+  height: 80px;
+}
