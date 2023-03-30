@@ -1,4 +1,4 @@
-// the history and Lifting state up, again 
+// the history and Lifting state up, again
 // You will now write a new top-level component called Game to display a list of past moves. That’s where you will place the history state that contains the entire game history.
 
 // Placing the history state into the Game component will let you remove the squares state from its child Board component. Just like you “lifted state up” from the Square component into the Board component, you will now lift it up from the Board into the top-level Game component. This gives the Game component full control over the Board’s data and lets it instruct the Board to render previous turns from the history.
@@ -101,49 +101,6 @@
 
 // At this point, you’ve moved the state to live in the Game component, and the UI should be fully working, just as it was before the refactor. Here is what the code should look like at this point:
 
-
-// App.js
-// Download
-// Reset
-
-// Fork
-// 60
-// 61
-// 62
-// 63
-// 64
-// 65
-// 66
-// 67
-// 68
-// 69
-// 70
-// 71
-// 72
-// 73
-// 74
-// 75
-// 76
-// 77
-// 78
-// 79
-// 80
-// 81
-// 82
-// 83
-// 84
-// 85
-// 86
-// 87
-// 88
-// 89
-// 90
-// 91
-// 92
-// 93
-// 94
-// 95
-// 96
 // import { useState } from 'react';
 //   function handlePlay(nextSquares) {
 //     setHistory([...history, nextSquares]);
@@ -182,10 +139,8 @@
 //   return null;
 // }
 
-
-
 // Show more
-// Showing the past moves 
+// Showing the past moves
 // Since you are recording the tic-tac-toe game’s history, you can now display a list of past moves to the player.
 
 // React elements like <button> are regular JavaScript objects; you can pass them around in your application. To render multiple items in React, you can use an array of React elements.
@@ -236,56 +191,6 @@
 // }
 // You can see what your code should look like below. Note that you should see an error in the developer tools console that says: Warning: Each child in an array or iterator should have a unique "key" prop. Check the render method of `Game`. You’ll fix this error in the next section.
 
-
-// App.js
-// Download
-// Reset
-
-// Fork
-// 71
-// 72
-// 73
-// 74
-// 75
-// 76
-// 77
-// 78
-// 79
-// 80
-// 81
-// 82
-// 83
-// 84
-// 85
-// 86
-// 87
-// 88
-// 89
-// 90
-// 91
-// 92
-// 93
-// 94
-// 95
-// 96
-// 97
-// 98
-// 99
-// 100
-// 101
-// 102
-// 103
-// 104
-// 105
-// 106
-// 107
-// 108
-// 109
-// 110
-// 111
-// 112
-// 113
-// 114
 // import { useState } from 'react';
 //     if (move > 0) {
 //       description = 'Go to move #' + move;
@@ -331,8 +236,6 @@
 //   return null;
 // }
 
-
-
 // Console (1)
 
 // Warning: Each child in a list should have a unique "key" prop.
@@ -348,7 +251,7 @@
 
 // For now, you should see a list of the moves that occurred in the game and an error in the developer tools console. Let’s discuss what the “key” error means.
 
-// Picking a key 
+// Picking a key
 // When you render a list, React stores some information about each rendered list item. When you update a list, React needs to determine what has changed. You could have added, removed, re-arranged, or updated the list’s items.
 
 // Imagine transitioning from
@@ -377,7 +280,7 @@
 
 // Keys do not need to be globally unique; they only need to be unique between components and their siblings.
 
-// Implementing time travel 
+// Implementing time travel
 // In the tic-tac-toe game’s history, each past move has a unique ID associated with it: it’s the sequential number of the move. Moves will never be re-ordered, deleted, or inserted in the middle, so it’s safe to use the move index as a key.
 
 // In the Game function, you can add the key as <li key={move}>, and if you reload the rendered game, React’s “key” error should disappear:
@@ -391,47 +294,6 @@
 //   );
 // });
 
-// App.js
-// Download
-// Reset
-
-// Fork
-// 1
-// 2
-// 3
-// 4
-// 5
-// 6
-// 7
-// 8
-// 9
-// 10
-// 11
-// 12
-// 13
-// 14
-// 15
-// 16
-// 17
-// 18
-// 19
-// 20
-// 21
-// 22
-// 23
-// 24
-// 25
-// 26
-// 27
-// 28
-// 29
-// 30
-// 31
-// 32
-// 33
-// 34
-// 35
-// 36
 // import { useState } from 'react';
 
 // function Square({ value, onSquareClick }) {
@@ -468,7 +330,6 @@
 //     <>
 //       <div className="status">{status}</div>
 //       <div className="board-row">
-
 
 // Show more
 // Before you can implement jumpTo, you need the Game component to keep track of which step the user is currently viewing. To do this, define a new state variable called currentMove, defaulting to 0:
@@ -512,48 +373,6 @@
 // }
 // If you click on any step in the game’s history, the tic-tac-toe board should immediately update to show what the board looked like after that step occurred.
 
-
-// App.js
-// Download
-// Reset
-
-// Fork
-// 1
-// 2
-// 3
-// 4
-// 5
-// 6
-// 7
-// 8
-// 9
-// 10
-// 11
-// 12
-// 13
-// 14
-// 15
-// 16
-// 17
-// 18
-// 19
-// 20
-// 21
-// 22
-// 23
-// 24
-// 25
-// 26
-// 27
-// 28
-// 29
-// 30
-// 31
-// 32
-// 33
-// 34
-// 35
-// 36
 // import { useState } from 'react';
 
 // function Square({value, onSquareClick}) {
@@ -591,9 +410,8 @@
 //       <div className="status">{status}</div>
 //       <div className="board-row">
 
-
 // Show more
-// Final cleanup 
+// Final cleanup
 // If you look at the code very closely, you may notice that xIsNext === true when currentMove is even and xIsNext === false when currentMove is odd. In other words, if you know the value of currentMove, then you can always figure out what xIsNext should be.
 
 // There’s no reason for you to store both of these in state. In fact, always try to avoid redundant state. Simplifying what you store in state reduces bugs and makes your code easier to understand. Change Game so that it doesn’t store xIsNext as a separate state variable and instead figures it out based on the currentMove:
@@ -617,7 +435,7 @@
 // }
 // You no longer need the xIsNext state declaration or the calls to setXIsNext. Now, there’s no chance for xIsNext to get out of sync with currentMove, even if you make a mistake while coding the components.
 
-// Wrapping up 
+// Wrapping up
 // Congratulations! You’ve created a tic-tac-toe game that:
 
 // Lets you play tic-tac-toe,
@@ -628,48 +446,6 @@
 
 // Check out the final result here:
 
-
-// App.js
-// Download
-// Reset
-
-// Fork
-// 1
-// 2
-// 3
-// 4
-// 5
-// 6
-// 7
-// 8
-// 9
-// 10
-// 11
-// 12
-// 13
-// 14
-// 15
-// 16
-// 17
-// 18
-// 19
-// 20
-// 21
-// 22
-// 23
-// 24
-// 25
-// 26
-// 27
-// 28
-// 29
-// 30
-// 31
-// 32
-// 33
-// 34
-// 35
-// 36
 // import { useState } from 'react';
 
 // function Square({ value, onSquareClick }) {
@@ -706,7 +482,6 @@
 //     <>
 //       <div className="status">{status}</div>
 //       <div className="board-row">
-
 
 // Show more
 // If you have extra time or want to practice your new React skills, here are some ideas for improvements that you could make to the tic-tac-toe game, listed in order of increasing difficulty:
